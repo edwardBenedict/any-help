@@ -2,34 +2,24 @@ import { useState } from "react";
 import { StyledInput, StyledButton } from "./Form.style";
 import { auth } from "../../../Firebase";
 
-function App() {
+const Form = () => {
   const [values, setValues] = useState({
-    firstName: "",
-    lastName: "",
     email: "",
     password: "",
-    confirmPassword: "",
-    policy: false,
   });
   const handleSubmit = (e) => {
     e.preventDefault();
     validate();
     if (validate()) {
       alert(JSON.stringify(validate()));
-      // console.log(values);
-      auth.createUserWithEmailAndPassword(values.email, values.password);
+      console.log(values);
+      auth
+        .signInWithEmailAndPassword(values.email, values.password)
+        .then((e) => console.log("Sign in succesfully", e));
     }
   };
-
   const validate = () => {
     const errors = {};
-
-    if (!values.firstName) {
-      return (errors.firstName = "Fill the First Name");
-    }
-    if (!values.lastName) {
-      return (errors.lastName = "Fill the Last Name");
-    }
 
     if (!values.email) {
       return (errors.email = "Fill the Email Address");
@@ -40,52 +30,16 @@ function App() {
     }
     if (!values.password) {
       return (errors.password = "Enter Your Password");
-    } else if (values.password.length < 8) {
-      return (errors.password = "Password must be min 8 characters!");
-    } else if (values.password.search(/\d/) === -1) {
-      return (errors.password = "Password must contain number!");
-    } else if (values.password.search(/[A-Z]/) === -1) {
-      return (errors.password =
-        "Password must contain capital and lowercase letter!");
-    } else if (values.password.search(/[a-z]/) === -1) {
-      return (errors.password = "Password must contain lowercase letter!");
-    } else if (values.password.search(/[^a-zA-Z0-9!@#$%^&*()_+]/) === -1) {
-      return (errors.password = "Password must contain special character!");
-    } else if (!values.confirmPassword) {
-      return (errors.password = "Confirm Password");
-    } else if (!(values.password === values.confirmPassword)) {
-      return (errors.password = "Didn't Match Password");
     }
-    if (!values.policy) {
-      return (errors.policy = "You should accept Privacy Policy!");
-    }
-    return "Resgistered Succesfully!";
+    return "Signed In Succesfully!";
   };
+
   const handleChange = (e) => {
     setValues({ ...values, [e.target.id]: e.target.value });
   };
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <StyledInput
-          type="text"
-          name="fisrtName"
-          id="firstName"
-          onChange={handleChange}
-          value={values.firstName}
-          placeholder="First Name"
-        />
-        <br />
-        <StyledInput
-          type="text"
-          name="lastName"
-          id="lastName"
-          onChange={handleChange}
-          value={values.lastName}
-          placeholder="Last Name"
-        />
-        <br />
         <StyledInput
           type="email"
           name="email"
@@ -104,43 +58,16 @@ function App() {
           placeholder="Password"
         />
         <br />
-        <StyledInput
-          type="password"
-          name="confirmPassword"
-          id="confirmPassword"
-          onChange={handleChange}
-          value={values.confirmPassword}
-          placeholder="Confirm Password"
-        />
-        <br />
-        <input
-          type="checkbox"
-          name="policy"
-          id="policy"
-          // required
-          value={values.policy}
-          onChange={handleChange}
-        />
-        <span style={{ fontSize: "1.2rem", paddingLeft: "0.5rem" }}>
-          I accept the{" "}
-          <a href="/" style={{ color: "white" }}>
-            Privacy Policy
-          </a>
-          .
-        </span>
-        <br />
-        <StyledButton type="submit" value="Register">
-          Register
+        <StyledButton type="submit" value="Login">
+          Login
         </StyledButton>
-        <p style={{ fontSize: "1rem" }}>
-          Already have an account?{" "}
-          <a href="/" style={{ color: "white" }}>
-            Login.
-          </a>
-        </p>
+        <br />
+        <a href="/" style={{ fontSize: "1rem", color: "white" }}>
+          Forgot Password?
+        </a>
       </form>
     </div>
   );
-}
+};
 
-export default App;
+export default Form;

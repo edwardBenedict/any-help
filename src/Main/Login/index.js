@@ -1,7 +1,7 @@
+import Header from "../SignUp/Header";
 import Form from "./Form";
-import Header from "./Header";
 
-const Login = () => {
+const SignUp = () => {
   return (
     <div>
       <Header />
@@ -10,4 +10,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
