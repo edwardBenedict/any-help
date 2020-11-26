@@ -65,6 +65,10 @@ const Form = () => {
         <a href="/" style={{ fontSize: "1rem", color: "white" }}>
           Forgot Password?
         </a>
+        <br />
+        <a href="/signup" style={{ fontSize: "1rem", color: "white" }}>
+          Don't have an account?
+        </a>
       </form>
     </div>
   );

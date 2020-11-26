@@ -1,6 +1,7 @@
 import "./App.css";
 import Login from "./Main/Login";
 import SignUp from "./Main/SignUp";
+import Main from "./Main";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { StyledAppWrapper } from "./App.style";
 
@@ -12,8 +13,11 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/">
+          <Route path="/signup">
             <SignUp />
+          </Route>
+          <Route>
+            <Main />
           </Route>
         </Switch>
       </Router>

@@ -134,7 +134,7 @@ function App() {
         </StyledButton>
         <p style={{ fontSize: "1rem" }}>
           Already have an account?{" "}
-          <a href="/" style={{ color: "white" }}>
+          <a href="/login" style={{ color: "white" }}>
             Login.
           </a>
         </p>
