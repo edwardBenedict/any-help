@@ -15,7 +15,7 @@ const Form = () => {
       console.log(values);
       auth
         .signInWithEmailAndPassword(values.email, values.password)
-        .then((e) => console.log("Sign in succesfully", e));
+        .then((e) => (window.location.href = "/"));
     }
   };
   const validate = () => {
