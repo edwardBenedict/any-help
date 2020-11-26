@@ -2,13 +2,13 @@ import firebase from "firebase";
 import "firebase/firestore";
 import "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyDdYIWw3aYXJP6iL7DqWCuoCpYJijndvqA",
-  authDomain: "anyhelp-48d4a.firebaseapp.com",
-  databaseURL: "https://anyhelp-48d4a.firebaseio.com",
-  projectId: "anyhelp-48d4a",
-  storageBucket: "anyhelp-48d4a.appspot.com",
-  messagingSenderId: "525627256917",
-  appId: "1:525627256917:web:92099886d1b2008743a4dc",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAİN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 firebase.initializeApp(firebaseConfig);
 let db = firebase.firestore();
