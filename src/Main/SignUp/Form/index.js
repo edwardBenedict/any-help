@@ -17,7 +17,15 @@ function App() {
     if (validate()) {
       alert(JSON.stringify(validate()));
       // console.log(values);
-      auth.createUserWithEmailAndPassword(values.email, values.password);
+      auth
+        .createUserWithEmailAndPassword(values.email, values.password)
+        .then((result) => {
+          alert(result);
+        })
+        .catch((e) => {
+          alert(e.message);
+          console.log(e);
+        });
     }
   };
 
@@ -59,7 +67,7 @@ function App() {
     if (!values.policy) {
       return (errors.policy = "You should accept Privacy Policy!");
     }
-    return "Resgistered Succesfully!";
+    // return "Resgistered Succesfully!";
   };
   const handleChange = (e) => {
     setValues({ ...values, [e.target.id]: e.target.value });
