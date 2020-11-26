@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { StyledAppWrapper } from "./App.style";
 
 function App() {
-  console.log("hello")
+  console.log("hello");
   return (
     <StyledAppWrapper>
       <Router>
