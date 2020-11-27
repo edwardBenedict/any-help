@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { StyledInput, StyledButton } from "./Form.style";
-import { auth } from "../../../Firebase";
+import firebase from "../../../Firebase/index"
 
 const Form = () => {
   const [values, setValues] = useState({
@@ -13,9 +13,7 @@ const Form = () => {
     if (validate()) {
       alert(JSON.stringify(validate()));
       console.log(values);
-      auth
-        .signInWithEmailAndPassword(values.email, values.password)
-        .then((e) => (window.location.href = "/"));
+      firebase.signIn(values.email,values.password)
     }
   };
   const validate = () => {
