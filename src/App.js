@@ -1,28 +1,15 @@
 import "./App.css";
-import Login from "./Main/Login";
-import SignUp from "./Main/SignUp";
-import Main from "./Main";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { StyledAppWrapper } from "./App.style";
-
+import AppRouter from "./Router/Router";
+import AuthContex from "./Context/index"
 function App() {
   console.log("hello");
   return (
-    <StyledAppWrapper>
-      <Router>
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <SignUp />
-          </Route>
-          <Route>
-            <Main />
-          </Route>
-        </Switch>
-      </Router>
-    </StyledAppWrapper>
+    <AuthContex>
+      <StyledAppWrapper>
+        <AppRouter/>
+      </StyledAppWrapper>
+    </AuthContex>
   );
 }
 

@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { StyledInput, StyledButton } from "./Form.style";
-import { auth } from "../../../Firebase";
+import firebase from "../../../Firebase/index"
 
 function App() {
   const [values, setValues] = useState({
-    firstName: "",
-    lastName: "",
+    displayName: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -17,26 +16,15 @@ function App() {
     if (validate()) {
       alert(JSON.stringify(validate()));
       // console.log(values);
-      auth
-        .createUserWithEmailAndPassword(values.email, values.password)
-        .then((result) => {
-          alert(result);
-        })
-        .catch((e) => {
-          alert(e.message);
-          console.log(e);
-        });
+      firebase.signUp(values.displayName,values.email,values.password)
     }
   };
 
   const validate = () => {
     const errors = {};
 
-    if (!values.firstName) {
-      return (errors.firstName = "Fill the First Name");
-    }
-    if (!values.lastName) {
-      return (errors.lastName = "Fill the Last Name");
+    if (!values.displayName) {
+      return (errors.displayName = "Fill the display name");
     }
 
     if (!values.email) {
@@ -78,20 +66,11 @@ function App() {
       <form onSubmit={handleSubmit}>
         <StyledInput
           type="text"
-          name="fisrtName"
-          id="firstName"
+          name="displayName"
+          id="displayName"
           onChange={handleChange}
-          value={values.firstName}
-          placeholder="First Name"
-        />
-        <br />
-        <StyledInput
-          type="text"
-          name="lastName"
-          id="lastName"
-          onChange={handleChange}
-          value={values.lastName}
-          placeholder="Last Name"
+          value={values.displayName}
+          placeholder="display Name"
         />
         <br />
         <StyledInput

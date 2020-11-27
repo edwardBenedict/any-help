@@ -1,26 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { SignedInLinks } from "../SignedInOutLinks/SignedInLinks";
-import { SignedOutLinks } from "../SignedInOutLinks/SignedOutLinks";
-import { StyledWrapper } from "./Navbar.style";
-import { auth } from "../firrebase/fbconfig";
+import React, { useEffect, useState,useContext } from "react";
+import { FirebaseAuthContex } from "../Context";
+import firebase from "../Firebase/index"
+
 const Navbar = () => {
-  const [flag, setFlag] = useState(false);
-  console.log(auth);
-  useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        setFlag(true);
-      } else {
-        setFlag(false);
-      }
-    });
-  }, []);
-  const links = flag ? <SignedInLinks /> : <SignedOutLinks />;
+  const {currentUser}=useContext(FirebaseAuthContex)
   return (
-    <StyledWrapper>
-      <button>Clarusway Project Tracking System</button>
-      {links}
-    </StyledWrapper>
+   <button>button</button>
+    
   );
 };
 export default Navbar;
