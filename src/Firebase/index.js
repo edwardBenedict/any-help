@@ -25,16 +25,28 @@ class Firebase {
     try {
       await this.firebaseAuth.createUserWithEmailAndPassword(email,password)
       this.firebaseAuth.currentUser.updateProfile({displayName})
+      console.log("signup successfull")
+      return
       
     } catch (error) {
-      console.log(error)
+      return new Error(error)
     }
   }
-  signOut(){
-    this.firebaseAuth.signOut()
+  async signOut(){
+    try {
+      await this.firebaseAuth.signOut()
+      
+    } catch (error) {
+
+      return error
+    }
   }
-  signIn(email,password){
-    this.firebaseAuth.signInWithEmailAndPassword(email,password)
+  async signIn(email,password){
+    try {
+      await this.firebaseAuth.signInWithEmailAndPassword(email,password)
+    } catch (error) {
+      return error.message
+    }
   }
   useGoogleProvider(){
     const googleProvider=new firebase.auth.GoogleAuthProvider();

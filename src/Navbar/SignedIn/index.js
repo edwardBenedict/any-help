@@ -1,8 +1,21 @@
-const SignedIn = () => {
+import { StyledFlexWrapper } from "../Navbar.style";
+import {Link, useHistory} from "react-router-dom";
+import firebase from "../../Firebase/index"
+
+const SignedIn = ({displayName}) => {
+  console.log(displayName)
+
+  const logOut=()=>{
+    firebase.signOut()
+  }
+
+ 
   return (
-    <div>
-      <h1>Signed In</h1>
-    </div>
+    <StyledFlexWrapper>
+      <button onClick={logOut} style={{marginRight:"1rem"}} >Logout</button>
+      <button style={{marginRight:"1rem"}} >New Question</button>
+  <button>{displayName}</button>
+    </StyledFlexWrapper>
   );
 };
 
