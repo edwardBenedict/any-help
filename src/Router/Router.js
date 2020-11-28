@@ -2,12 +2,13 @@ import Login from "../Main/Login";
 import SignUp from "../Main/SignUp";
 import Main from "../Main";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navbar from "../Navbar";
 
 
 function AppRouter() {
   console.log("hello");
   return (
-      <Router>
+    <div>
         <Switch>
           <Route path="/login">
             <Login />
@@ -19,7 +20,7 @@ function AppRouter() {
             <Main />
           </Route>
         </Switch>
-      </Router>
+    </div>
   );
 }
 

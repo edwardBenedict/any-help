@@ -1,10 +1,22 @@
-const SignedOut = () => {
+import { StyledFlexWrapper } from "../Navbar.style";
+
+import {Link, useHistory} from "react-router-dom";
+
+const SignedOut = (props) => {
+  console.log(props)
+  const history=useHistory()
+
+  const goToSignUp=()=>{
+    history.push("/signup")
+  }
+  const goToLogin=()=>{
+    history.push("/login")
+  }
   return (
-    <div>
-      <h1>Signed Out</h1>
-      <a href="/login">Login</a>
-      <a href="/signup">SignUp</a>
-    </div>
+    <StyledFlexWrapper>
+      <button onClick={goToLogin} style={{marginRight:"1rem"}}>Login</button>
+      <button onClick={goToSignUp}>SignUp</button>
+    </StyledFlexWrapper>
   );
 };
 

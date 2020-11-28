@@ -1,17 +1,16 @@
 import SignedIn from "../Navbar/SignedIn";
 import SignedOut from "../Navbar/SignedOut";
 import { useState, useEffect } from "react";
+import { StyledFlexWrapper } from "../Navbar/Navbar.style";
 
 const Main = () => {
-  const [isSignIn, setIsSignIn] = useState(false);
-
-  const link = isSignIn ? <SignedIn /> : <SignedOut />;
 
   return (
-    <div>
-      {link}
-      <button onClick={()=>null}>Sign Out</button>
-    </div>
+    <StyledFlexWrapper style={{justifyContent:"center"}}>
+    
+      <p>MAIN SECTION</p>
+
+    </StyledFlexWrapper>
   );
 };
 
