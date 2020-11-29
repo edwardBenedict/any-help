@@ -1,4 +1,4 @@
-import Form from "./Form";
+import Form from "./Form/Form";
 import Header from "./Header";
 // import SignUpWithGoogle from "./SignUpWithGoogle";
 
