@@ -1,15 +1,14 @@
 import React, { useContext } from "react";
 import { FirebaseAuthContex } from "../Context/Context";
-// import firebase from "../Firebase/index";
 import {
   StyledNavbarLeftWrapper,
   StyledNavbarMainWrapper,
   StyledNavbarRightWrapper,
   StyledNavbarSearchBoxWrapper,
 } from "./Navbar.style";
-import { SearcBox } from "./SearchBox";
-import SignedIn from "./SignedIn";
-import SignedOut from "./SignedOut";
+import SearcBox from "./SearchBox/SearchBox";
+import SignedIn from "./SignedIn/SignedIn";
+import SignedOut from "./SignedOut/SignedOut";
 
 const Navbar = () => {
   const { currentUser } = useContext(FirebaseAuthContex);

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { StyledInput, StyledButton } from "./Form.style";
-import firebase from "../../../Firebase/index";
+import firebase from "../../../Firebase/Firebase";
 import { useHistory } from "react-router-dom";
 function App() {
   const history = useHistory();

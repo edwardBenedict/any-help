@@ -1,5 +1,5 @@
-import Login from "../Main/Login";
-import SignUp from "../Main/SignUp";
+import Login from "../Main/Login/Login";
+import SignUp from "../Main/SignUp/SignUp";
 import MainPage from "../Main/MainPage";
 import { Switch, Route } from "react-router-dom";
 
