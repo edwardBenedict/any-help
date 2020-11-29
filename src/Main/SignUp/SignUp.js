@@ -1,8 +1,8 @@
 import Form from "./Form/Form";
-import Header from "./Header";
+import Header from "./Header/Header";
 // import SignUpWithGoogle from "./SignUpWithGoogle";
 
-const Login = () => {
+const SignUp = () => {
   return (
     <div>
       <Header />
@@ -12,4 +12,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;

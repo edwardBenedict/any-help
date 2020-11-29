@@ -1,28 +1,26 @@
 import { useState } from "react";
 import { StyledInput, StyledButton } from "./Form.style";
-import firebase from "../../../Firebase/index"
-import {useHistory} from "react-router-dom"
+import firebase from "../../../Firebase/Firebase";
+import { useHistory } from "react-router-dom";
 const Form = (props) => {
-
-  const [loginError,setloginError]=useState(null)
-  const history=useHistory()
+  const [loginError, setloginError] = useState(null);
+  const history = useHistory();
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(validate())
+    console.log(validate());
     validate();
     if (validate()) {
-      firebase.signIn(values.email,values.password).then((res)=>{
-        if(res){
-          setloginError(res) 
-          return 
+      firebase.signIn(values.email, values.password).then((res) => {
+        if (res) {
+          setloginError(res);
+          return;
         }
-        history.push("/")
-      })
-
+        history.push("/");
+      });
     }
   };
   const validate = () => {
@@ -77,7 +75,7 @@ const Form = (props) => {
           Don't have an account?
         </a>
       </form>
-  <p style={{color:"red"}}>{loginError}</p>
+      <p style={{ color: "red" }}>{loginError}</p>
     </div>
   );
 };
