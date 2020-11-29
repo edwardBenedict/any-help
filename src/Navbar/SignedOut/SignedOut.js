@@ -1,4 +1,5 @@
-import { StyledFlexWrapper } from "../Navbar.style";
+// import {  } from "../Navbar.style";
+import { StyledFlexWrapper, StyledButton } from "./SignedOut.style";
 
 import { useHistory } from "react-router-dom";
 
@@ -14,10 +15,8 @@ const SignedOut = (props) => {
   };
   return (
     <StyledFlexWrapper>
-      <button onClick={goToLogin} style={{ marginRight: "1rem" }}>
-        Login
-      </button>
-      <button onClick={goToSignUp}>SignUp</button>
+      <StyledButton onClick={goToLogin}>Login</StyledButton>
+      <StyledButton onClick={goToSignUp}>Sign Up</StyledButton>
     </StyledFlexWrapper>
   );
 };

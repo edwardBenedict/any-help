@@ -1,6 +1,11 @@
 import React from "react";
+import { StyledSearchBox } from "./SearchBox.style";
 
 const SearcBox = () => {
-  return <input type="text" placeholder="type ...." />;
+  return (
+    <div>
+      <StyledSearchBox type="text" placeholder="Search" />
+    </div>
+  );
 };
 export default SearcBox;

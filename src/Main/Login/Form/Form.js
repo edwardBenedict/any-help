@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyledInput, StyledButton } from "./Form.style";
+import { StyledInput, StyledButton, StyledWrapper } from "./Form.style";
 import firebase from "../../../Firebase/Firebase";
 import { useHistory } from "react-router-dom";
 const Form = (props) => {
@@ -43,7 +43,7 @@ const Form = (props) => {
     setValues({ ...values, [e.target.id]: e.target.value });
   };
   return (
-    <div>
+    <StyledWrapper>
       <form onSubmit={handleSubmit}>
         <StyledInput
           type="email"
@@ -76,7 +76,7 @@ const Form = (props) => {
         </a>
       </form>
       <p style={{ color: "red" }}>{loginError}</p>
-    </div>
+    </StyledWrapper>
   );
 };
 

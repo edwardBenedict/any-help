@@ -2,11 +2,12 @@ import Login from "../Main/Login/Login";
 import SignUp from "../Main/SignUp/SignUp";
 import MainPage from "../Main/MainPage";
 import { Switch, Route } from "react-router-dom";
+import { StyledWrapper } from "./Router.style";
 
 function AppRouter() {
   console.log("hello");
   return (
-    <div>
+    <StyledWrapper>
       <Switch>
         <Route path="/login">
           <Login />
@@ -18,7 +19,7 @@ function AppRouter() {
           <MainPage />
         </Route>
       </Switch>
-    </div>
+    </StyledWrapper>
   );
 }
 

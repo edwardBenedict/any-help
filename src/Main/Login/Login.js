@@ -1,13 +1,14 @@
 import Header from "../SignUp/Header/Header";
 import Form from "./Form/Form";
+import { StyledLoginWrapper } from "./Login.style";
 
-const SignUp = () => {
+const Login = () => {
   return (
-    <div>
+    <StyledLoginWrapper>
       <Header />
       <Form />
-    </div>
+    </StyledLoginWrapper>
   );
 };
 
-export default SignUp;
+export default Login;

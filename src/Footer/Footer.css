@@ -6,13 +6,14 @@
 }
 
 .fixed-footer {
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   background: #333;
   padding: 10px;
   color: #fff;
   bottom: 0;
   font-size: 2rem;
+  height: 10vh;
 }
 
 .social-item {
