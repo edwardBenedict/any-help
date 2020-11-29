@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { StyledInput, StyledButton } from "./Form.style";
-import firebase from "../../../Firebase/index"
-import {useHistory} from "react-router-dom"
+import firebase from "../../../Firebase/index";
+import { useHistory } from "react-router-dom";
 function App() {
-  const history=useHistory()
+  const history = useHistory();
   const [values, setValues] = useState({
     displayName: "",
     email: "",
@@ -15,12 +15,11 @@ function App() {
     console.log(values);
     e.preventDefault();
     validate();
-    console.log(validate())
+    console.log(validate());
     if (validate()) {
-      history.push("/")
+      history.push("/");
       console.log(values);
-      firebase.signUp(values.displayName,values.email,values.password)
-      
+      firebase.signUp(values.displayName, values.email, values.password);
     }
   };
 
@@ -59,13 +58,13 @@ function App() {
     if (!values.policy) {
       return (errors.policy = "You should accept Privacy Policy!");
     }
-    return true
+    return true;
   };
 
   const handleChange = (e) => {
-    if(e.target.id!="policy"){
+    if (e.target.id !== "policy") {
       setValues({ ...values, [e.target.id]: e.target.value });
-    }else{
+    } else {
       setValues({ ...values, [e.target.id]: e.target.checked });
     }
   };
@@ -79,7 +78,7 @@ function App() {
           id="displayName"
           onChange={handleChange}
           value={values.displayName}
-          placeholder="display Name"
+          placeholder="Display Name"
         />
         <br />
         <StyledInput
@@ -113,7 +112,7 @@ function App() {
           type="checkbox"
           name="policy"
           id="policy"
-          value={values.policy} 
+          value={values.policy}
           onChange={handleChange}
         />
         <span style={{ fontSize: "1.2rem", paddingLeft: "0.5rem" }}>

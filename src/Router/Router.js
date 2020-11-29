@@ -1,25 +1,23 @@
 import Login from "../Main/Login";
 import SignUp from "../Main/SignUp";
-import Main from "../Main";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from "../Navbar";
-
+import MainPage from "../Main/MainPage";
+import { Switch, Route } from "react-router-dom";
 
 function AppRouter() {
   console.log("hello");
   return (
     <div>
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <SignUp />
-          </Route>
-          <Route>
-            <Main />
-          </Route>
-        </Switch>
+      <Switch>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/signup">
+          <SignUp />
+        </Route>
+        <Route>
+          <MainPage />
+        </Route>
+      </Switch>
     </div>
   );
 }
