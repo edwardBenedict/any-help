@@ -10,3 +10,11 @@ export const StyledHeader = styled.h1`
   font-size: 2rem;
   color: #f6a728;
 `;
+
+export const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`;

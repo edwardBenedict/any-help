@@ -8,13 +8,13 @@ import Footer from "./Footer/Footer";
 function App() {
   console.log("hello");
   return (
-    <AuthContex>
-      <Navbar />
-      <StyledAppWrapper>
+    <StyledAppWrapper>
+      <AuthContex>
+        <Navbar />
         <AppRouter />
-      </StyledAppWrapper>
-      <Footer />
-    </AuthContex>
+        <Footer />
+      </AuthContex>
+    </StyledAppWrapper>
   );
 }
 

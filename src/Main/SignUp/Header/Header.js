@@ -1,9 +1,9 @@
 import React from "react";
-import { StyledImg, StyledHeader } from "./Header.style";
+import { StyledImg, StyledHeader, StyledWrapper } from "./Header.style";
 
 const Header = () => {
   return (
-    <div>
+    <StyledWrapper>
       <StyledImg
         src="https://kdshirtshop.com/wp-content/uploads/2017/07/FOAM-FINGER-ORANGE-300X300PX.png"
         alt="Logo"
@@ -14,7 +14,7 @@ const Header = () => {
           <span style={{ fontSize: "6rem" }}>H</span>ELP
         </i>
       </StyledHeader>
-    </div>
+    </StyledWrapper>
   );
 };
 

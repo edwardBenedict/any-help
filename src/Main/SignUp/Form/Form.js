@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyledInput, StyledButton } from "./Form.style";
+import { StyledInput, StyledButton, StyledWrapper } from "./Form.style";
 import firebase from "../../../Firebase/Firebase";
 import { useHistory } from "react-router-dom";
 function App() {
@@ -70,7 +70,7 @@ function App() {
   };
 
   return (
-    <div>
+    <StyledWrapper>
       <form onSubmit={handleSubmit}>
         <StyledInput
           type="text"
@@ -133,7 +133,7 @@ function App() {
           </a>
         </p>
       </form>
-    </div>
+    </StyledWrapper>
   );
 }
 

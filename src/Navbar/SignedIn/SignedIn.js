@@ -1,4 +1,4 @@
-import { StyledFlexWrapper } from "../Navbar.style";
+import { StyledFlexWrapper, StyledButton } from "../SignedOut/SignedOut.style";
 import { Link, useHistory } from "react-router-dom";
 import firebase from "../../Firebase/Firebase";
 
@@ -11,11 +11,11 @@ const SignedIn = ({ displayName }) => {
 
   return (
     <StyledFlexWrapper>
-      <button onClick={logOut} style={{ marginRight: "1rem" }}>
+      <StyledButton onClick={logOut} style={{ marginRight: "1rem" }}>
         Logout
-      </button>
-      <button style={{ marginRight: "1rem" }}>New Question</button>
-      <button>{displayName}</button>
+      </StyledButton>
+      <StyledButton style={{ marginRight: "1rem" }}>New Question</StyledButton>
+      <StyledButton>{displayName}</StyledButton>
     </StyledFlexWrapper>
   );
 };

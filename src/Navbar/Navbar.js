@@ -5,10 +5,12 @@ import {
   StyledNavbarMainWrapper,
   StyledNavbarRightWrapper,
   StyledNavbarSearchBoxWrapper,
+  StyledLogo,
 } from "./Navbar.style";
 import SearcBox from "./SearchBox/SearchBox";
 import SignedIn from "./SignedIn/SignedIn";
 import SignedOut from "./SignedOut/SignedOut";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const { currentUser } = useContext(FirebaseAuthContex);
@@ -21,7 +23,9 @@ const Navbar = () => {
 
   return (
     <StyledNavbarMainWrapper>
-      <StyledNavbarLeftWrapper></StyledNavbarLeftWrapper>
+      <StyledNavbarLeftWrapper>
+        <StyledLogo src={logo} alt="" />
+      </StyledNavbarLeftWrapper>
       <StyledNavbarSearchBoxWrapper>
         <SearcBox />
       </StyledNavbarSearchBoxWrapper>
