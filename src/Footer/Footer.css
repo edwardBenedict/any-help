@@ -13,7 +13,8 @@
   color: #fff;
   bottom: 0;
   font-size: 2rem;
-  height: 10vh;
+  /* height: 10vh; */
+  min-height: 8vh;
 }
 
 .social-item {

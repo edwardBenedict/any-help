@@ -15,4 +15,5 @@ export const StyledFlexWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  height: 5vh; // Deletable
 `;
