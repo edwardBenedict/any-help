@@ -4,7 +4,7 @@ import firebase from "../Firebase/Firebase";
 export const FirebaseAuthContex = createContext();
 
 const AuthContex = (props) => {
-  const [flag, setFlag] = useState(false);
+  // const [flag, setFlag] = useState(false);
   const [currentUser, setcurrentUser] = useState(false);
 
   useEffect(() => {
