@@ -13,6 +13,7 @@ export const StyledNavbarMainWrapper = styled.div`
 
 export const StyledLogo = styled.img`
   width: 3rem;
+  cursor: pointer;
 `;
 
 export const StyledNavbarLeftWrapper = styled.div`

@@ -11,9 +11,11 @@ import SearcBox from "./SearchBox/SearchBox";
 import SignedIn from "./SignedIn/SignedIn";
 import SignedOut from "./SignedOut/SignedOut";
 import logo from "../assets/logo.png";
+import { useHistory } from "react-router-dom";
 
 const Navbar = () => {
   const { currentUser } = useContext(FirebaseAuthContex);
+  const history = useHistory();
 
   const links = currentUser ? (
     <SignedIn displayName={currentUser?.displayName} />
@@ -21,10 +23,14 @@ const Navbar = () => {
     <SignedOut />
   );
 
+  const handleHomeClick = () => {
+    history.push("/");
+  };
+
   return (
     <StyledNavbarMainWrapper>
       <StyledNavbarLeftWrapper>
-        <StyledLogo src={logo} alt="" />
+        <StyledLogo src={logo} alt="any-help-logo" onClick={handleHomeClick} />
       </StyledNavbarLeftWrapper>
       <StyledNavbarSearchBoxWrapper>
         <SearcBox />
