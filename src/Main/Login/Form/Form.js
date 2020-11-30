@@ -2,6 +2,8 @@ import { useState } from "react";
 import { StyledInput, StyledButton, StyledWrapper } from "./Form.style";
 import firebase from "../../../Firebase/Firebase";
 import { useHistory } from "react-router-dom";
+import LoginWithGoogle from "../../LoginWithGoogle/LoginWithGoogle";
+
 const Form = (props) => {
   const [loginError, setloginError] = useState(null);
   const history = useHistory();
@@ -67,14 +69,16 @@ const Form = (props) => {
           Login
         </StyledButton>
         <br />
-        <a href="/" style={{ fontSize: "1rem", color: "white" }}>
-          Forgot Password?
-        </a>
-        <br />
-        <a href="/signup" style={{ fontSize: "1rem", color: "white" }}>
-          Don't have an account?
-        </a>
       </form>
+      <LoginWithGoogle />
+      <br />
+      <a href="/" style={{ fontSize: "1rem", color: "white" }}>
+        Forgot Password?
+      </a>
+      <br />
+      <a href="/signup" style={{ fontSize: "1rem", color: "white" }}>
+        Don't have an account?
+      </a>
       <p style={{ color: "red" }}>{loginError}</p>
     </StyledWrapper>
   );

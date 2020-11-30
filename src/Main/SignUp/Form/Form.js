@@ -2,6 +2,8 @@ import { useState } from "react";
 import { StyledInput, StyledButton, StyledWrapper } from "./Form.style";
 import firebase from "../../../Firebase/Firebase";
 import { useHistory } from "react-router-dom";
+import LoginWithGoogle from "../../LoginWithGoogle/LoginWithGoogle";
+
 function App() {
   const history = useHistory();
   const [values, setValues] = useState({
@@ -127,13 +129,14 @@ function App() {
         <StyledButton type="submit" value="Register">
           Register
         </StyledButton>
-        <p style={{ fontSize: "1rem" }}>
-          Already have an account?{" "}
-          <a href="/login" style={{ color: "white" }}>
-            Login.
-          </a>
-        </p>
       </form>
+      <LoginWithGoogle />
+      <p style={{ fontSize: "1rem" }}>
+        Already have an account?{" "}
+        <a href="/login" style={{ color: "white" }}>
+          Login.
+        </a>
+      </p>
     </StyledWrapper>
   );
 }
