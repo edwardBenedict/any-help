@@ -4,7 +4,7 @@ import "../SignedOut/SignedOut.css";
 import firebase from "../../Firebase/Firebase";
 
 const SignedOut = ({ displayName }) => {
-  const logOut = () => {
+  const logout = () => {
     firebase.signOut();
   };
   return (
@@ -14,7 +14,7 @@ const SignedOut = ({ displayName }) => {
           <FaListUl className="icon" />
         </a>
         <div className="dp-content">
-          <button onClick={logOut}>Logout</button>
+          <button onClick={logout}>Logout</button>
           <button>New Question</button>
           <button>{displayName}</button>
         </div>
