@@ -6,5 +6,5 @@ export const StyledSearchBox = styled.input`
   background-color: #282c34;
   color: white;
   font-size: 1.5rem;
-  width: 15rem;
+  width: 10rem;
 `;

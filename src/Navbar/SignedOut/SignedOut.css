@@ -1,0 +1,43 @@
+.menu {
+  /* float: right; */
+  margin-right: 0rem;
+}
+.dp-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  z-index: 1;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
+  margin-left: -4rem;
+}
+
+.dropdown:hover .dp-content {
+  display: block;
+  flex-direction: column;
+  border-radius: 10px;
+}
+li button {
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  width: 7rem;
+}
+
+li {
+  list-style: none;
+}
+
+.dp-content button {
+  font-size: 1rem;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+.dp-content button:hover {
+  background-color: orange;
+  color: black;
+}
+
+.icon {
+  color: orange;
+}
