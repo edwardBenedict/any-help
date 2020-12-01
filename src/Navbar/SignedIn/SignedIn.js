@@ -1,19 +1,26 @@
-import { StyledFlexWrapper, StyledButton } from "../SignedOut/SignedOut.style";
-// import { Link, useHistory } from "react-router-dom";
+import React from "react";
+import { FaListUl } from "react-icons/fa";
+import "../SignedOut/SignedOut.css";
 import firebase from "../../Firebase/Firebase";
 
-const SignedIn = ({ displayName }) => {
+const SignedOut = ({ displayName }) => {
   const logOut = () => {
     firebase.signOut();
   };
-
   return (
-    <StyledFlexWrapper>
-      <StyledButton onClick={logOut}>Logout</StyledButton>
-      <StyledButton>New Question</StyledButton>
-      <StyledButton>{displayName}</StyledButton>
-    </StyledFlexWrapper>
+    <div className="menu">
+      <li className="dropdown">
+        <a className="dp-btn" href="/">
+          <FaListUl className="icon" />
+        </a>
+        <div className="dp-content">
+          <button onClick={logOut}>Logout</button>
+          <button>New Question</button>
+          <button>{displayName}</button>
+        </div>
+      </li>
+    </div>
   );
 };
 
-export default SignedIn;
+export default SignedOut;

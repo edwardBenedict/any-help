@@ -1,10 +1,9 @@
-// import {  } from "../Navbar.style";
-import { StyledFlexWrapper, StyledButton } from "./SignedOut.style";
-
+import React from "react";
+import { FaListUl } from "react-icons/fa";
+import "./SignedOut.css";
 import { useHistory } from "react-router-dom";
 
-const SignedOut = (props) => {
-  console.log(props);
+const SignedOut = () => {
   const history = useHistory();
 
   const goToSignUp = () => {
@@ -14,10 +13,17 @@ const SignedOut = (props) => {
     history.push("/login");
   };
   return (
-    <StyledFlexWrapper>
-      <StyledButton onClick={goToLogin}>Login</StyledButton>
-      <StyledButton onClick={goToSignUp}>Sign Up</StyledButton>
-    </StyledFlexWrapper>
+    <div className="menu">
+      <li className="dropdown">
+        <a className="dp-btn" href="/">
+          <FaListUl className="icon" />
+        </a>
+        <div className="dp-content">
+          <button onClick={goToLogin}>Login</button>
+          <button onClick={goToSignUp}>Sign Up</button>
+        </div>
+      </li>
+    </div>
   );
 };
 
