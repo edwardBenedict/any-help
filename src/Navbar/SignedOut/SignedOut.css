@@ -20,7 +20,7 @@ li button {
   background-color: #333;
   color: white;
   font-size: 1rem;
-  width: 7rem;
+  width: 8rem;
 }
 
 li {
@@ -30,7 +30,7 @@ li {
 .dp-content button {
   font-size: 1rem;
   border-radius: 10px;
-  padding: 0.5rem;
+  padding: 0.7rem;
 }
 
 .dp-content button:hover {
